@@ -4,6 +4,7 @@ import SwiftData
 // 첫 화면: 기록 묶음 목록
 struct SessionListView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(MeasurementService.self) private var measurementService
 
     // @Query: SwiftData에서 데이터를 읽어오고, 데이터가 바뀌면 화면을 자동 갱신
     @Query(sort: \RecordSession.startedAt, order: .reverse)
@@ -12,6 +13,8 @@ struct SessionListView: View {
     // NavigationStack의 경로. 여기에 묶음을 append하면 그 묶음 화면으로 이동합니다.
     @State private var path: [RecordSession] = []
     @State private var showStarredOnly = false
+    @State private var showNewSession = false
+    @State private var newSessionTitle = ""
 
     private var visibleSessions: [RecordSession] {
         showStarredOnly ? sessions.filter(\.isStarred) : sessions
@@ -20,6 +23,7 @@ struct SessionListView: View {
     var body: some View {
         NavigationStack(path: $path) {
             List {
+                RecordingSaveStatus()
                 ForEach(visibleSessions) { session in
                     NavigationLink(value: session) {
                         SessionRow(session: session)
@@ -57,23 +61,38 @@ struct SessionListView: View {
                     .accessibilityLabel("중요 묶음만 보기")
                 }
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("새 측정", systemImage: "plus", action: startNewSession)
+                    Button("새 측정", systemImage: "plus") {
+                        newSessionTitle = "측정 " + Date.now.formatted(date: .abbreviated, time: .shortened)
+                        showNewSession = true
+                    }
                 }
             }
             .navigationDestination(for: RecordSession.self) { session in
                 SessionView(session: session)
             }
+            .alert("새 측정", isPresented: $showNewSession) {
+                TextField("세션 이름 (예: Library3F)", text: $newSessionTitle)
+                Button("취소", role: .cancel) {}
+                Button("측정 시작", action: startNewSession)
+            } message: {
+                Text("위치 측정과 기압 자동 기록을 함께 시작합니다.")
+            }
         }
     }
 
     private func startNewSession() {
+        measurementService.finish()
         // 측정은 한 번에 하나만: 진행 중인 묶음이 있으면 먼저 종료
         for session in sessions where session.isActive {
             session.endedAt = .now
         }
-        let title = "측정 " + Date.now.formatted(date: .abbreviated, time: .shortened)
+        let enteredTitle = newSessionTitle.trimmingCharacters(in: .whitespacesAndNewlines)
+        let title = enteredTitle.isEmpty
+            ? "측정 " + Date.now.formatted(date: .abbreviated, time: .shortened)
+            : enteredTitle
         let newSession = RecordSession(title: title)
         modelContext.insert(newSession)   // 저장소에 추가
+        measurementService.start(session: newSession, context: modelContext)
         path.append(newSession)           // 바로 측정 화면으로 이동
     }
 
@@ -81,6 +100,7 @@ struct SessionListView: View {
         // offsets는 화면에 보이는 배열(visibleSessions) 기준의 위치입니다.
         let targets = offsets.map { visibleSessions[$0] }
         for session in targets {
+            if measurementService.isRecording(session) { measurementService.finish() }
             modelContext.delete(session)  // cascade 규칙으로 안의 기록도 함께 삭제
         }
     }
@@ -88,6 +108,7 @@ struct SessionListView: View {
 
 struct SessionRow: View {
     let session: RecordSession
+    @Environment(MeasurementService.self) private var measurementService
 
     var body: some View {
         HStack(spacing: 12) {
@@ -105,12 +126,12 @@ struct SessionRow: View {
             Spacer()
 
             if session.isActive {
-                Text("측정 중")
+                Text(measurementService.isRecording(session) ? "측정 중" : "중단됨")
                     .font(.caption2.bold())
                     .foregroundStyle(.white)
                     .padding(.horizontal, 8)
                     .padding(.vertical, 3)
-                    .background(Color.green, in: Capsule())
+                    .background(measurementService.isRecording(session) ? Color.green : Color.orange, in: Capsule())
             }
         }
     }

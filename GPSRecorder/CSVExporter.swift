@@ -92,10 +92,18 @@ nonisolated struct CSVDocument: Transferable {
     let fileName: String
     let text: String
 
+    func writeTemporaryFile() throws -> URL {
+        // 같은 이름으로 공유하더라도 이전 공유 파일을 덮어쓰지 않도록 분리합니다.
+        let directory = URL.temporaryDirectory.appending(path: UUID().uuidString, directoryHint: .isDirectory)
+        try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+        let url = directory.appending(path: fileName)
+        try Data(text.utf8).write(to: url, options: .atomic)
+        return url
+    }
+
     static var transferRepresentation: some TransferRepresentation {
         FileRepresentation(exportedContentType: .commaSeparatedText) { document in
-            let url = URL.temporaryDirectory.appending(path: document.fileName)
-            try Data(document.text.utf8).write(to: url, options: .atomic)
+            let url = try document.writeTemporaryFile()
             return SentTransferredFile(url)
         }
     }

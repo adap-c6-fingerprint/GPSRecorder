@@ -4,7 +4,9 @@ import SwiftData
 // 전달받은 저장소는 첫 실행에만 복사합니다. 이후에는 기기에 저장된 기록을 계속 사용합니다.
 enum Persistence {
     static func makeContainer() throws -> ModelContainer {
-        let schema = Schema([RecordSession.self, LocationRecord.self])
+        let schema = Schema([
+            RecordSession.self, LocationRecord.self, BarometerRecord.self, ArrivalRecord.self,
+        ])
         let configuration = ModelConfiguration(schema: schema)
         let fileManager = FileManager.default
 

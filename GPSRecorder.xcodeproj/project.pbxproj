@@ -77,6 +77,9 @@
 				"000000000000000000000005",
 				"000000000000000000000006",
 				"000000000000000000000007",
+				"00000000000000000000002A",
+				"00000000000000000000002C",
+				"00000000000000000000002E",
 				"00000000000000000000000A",
 			);
 			"isa" = "PBXGroup";
@@ -85,7 +88,7 @@
 		};
 		"00000000000000000000000F" = {
 			"children" = (
-				"00000000000000000000002A",
+				"00000000000000000000003D",
 			);
 			"isa" = "PBXGroup";
 			"path" = "ReceivedData";
@@ -121,6 +124,7 @@
 		"000000000000000000000014" = {
 			"children" = (
 				"000000000000000000000013",
+				"000000000000000000000032",
 			);
 			"isa" = "PBXGroup";
 			"name" = "Products";
@@ -132,6 +136,7 @@
 				"000000000000000000000011",
 				"00000000000000000000000F",
 				"000000000000000000000012",
+				"000000000000000000000031",
 				"000000000000000000000014",
 			);
 			"isa" = "PBXGroup";
@@ -175,6 +180,9 @@
 				"00000000000000000000001A",
 				"00000000000000000000001B",
 				"00000000000000000000001C",
+				"00000000000000000000002B",
+				"00000000000000000000002D",
+				"00000000000000000000002F",
 			);
 			"isa" = "PBXSourcesBuildPhase";
 			"runOnlyForDeploymentPostprocessing" = "0";
@@ -270,6 +278,7 @@
 				"ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME" = "AccentColor";
 				"CODE_SIGN_STYLE" = "Automatic";
 				"CURRENT_PROJECT_VERSION" = "1";
+				"DEVELOPMENT_TEAM" = "GHGPAZGBBT";
 				"ENABLE_PREVIEWS" = "YES";
 				"GENERATE_INFOPLIST_FILE" = "NO";
 				"INFOPLIST_FILE" = "Configuration/Info.plist";
@@ -294,6 +303,7 @@
 				"ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME" = "AccentColor";
 				"CODE_SIGN_STYLE" = "Automatic";
 				"CURRENT_PROJECT_VERSION" = "1";
+				"DEVELOPMENT_TEAM" = "GHGPAZGBBT";
 				"ENABLE_PREVIEWS" = "YES";
 				"GENERATE_INFOPLIST_FILE" = "NO";
 				"INFOPLIST_FILE" = "Configuration/Info.plist";
@@ -348,6 +358,10 @@
 					"000000000000000000000028" = {
 						"CreatedOnToolsVersion" = "27.2";
 					};
+					"00000000000000000000003C" = {
+						"CreatedOnToolsVersion" = "27.2";
+						"TestTargetID" = "000000000000000000000028";
+					};
 				};
 			};
 			"buildConfigurationList" = "000000000000000000000024";
@@ -366,9 +380,164 @@
 			"projectRoot" = "";
 			"targets" = (
 				"000000000000000000000028",
+				"00000000000000000000003C",
 			);
 		};
 		"00000000000000000000002A" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "MeasurementService.swift";
+			"sourceTree" = "<group>";
+		};
+		"00000000000000000000002B" = {
+			"fileRef" = "00000000000000000000002A";
+			"isa" = "PBXBuildFile";
+		};
+		"00000000000000000000002C" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "SurveyRecords.swift";
+			"sourceTree" = "<group>";
+		};
+		"00000000000000000000002D" = {
+			"fileRef" = "00000000000000000000002C";
+			"isa" = "PBXBuildFile";
+		};
+		"00000000000000000000002E" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "SurveyCSVExporter.swift";
+			"sourceTree" = "<group>";
+		};
+		"00000000000000000000002F" = {
+			"fileRef" = "00000000000000000000002E";
+			"isa" = "PBXBuildFile";
+		};
+		"000000000000000000000030" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "SurveyTests.swift";
+			"sourceTree" = "<group>";
+		};
+		"000000000000000000000031" = {
+			"children" = (
+				"000000000000000000000030",
+			);
+			"isa" = "PBXGroup";
+			"path" = "GPSRecorderTests";
+			"sourceTree" = "<group>";
+		};
+		"000000000000000000000032" = {
+			"explicitFileType" = "wrapper.cfbundle";
+			"includeInIndex" = "0";
+			"isa" = "PBXFileReference";
+			"path" = "GPSRecorderTests.xctest";
+			"sourceTree" = "BUILT_PRODUCTS_DIR";
+		};
+		"000000000000000000000033" = {
+			"fileRef" = "000000000000000000000030";
+			"isa" = "PBXBuildFile";
+		};
+		"000000000000000000000034" = {
+			"buildActionMask" = "2147483647";
+			"files" = (
+				"000000000000000000000033",
+			);
+			"isa" = "PBXSourcesBuildPhase";
+			"runOnlyForDeploymentPostprocessing" = "0";
+		};
+		"000000000000000000000035" = {
+			"buildActionMask" = "2147483647";
+			"files" = (
+			);
+			"isa" = "PBXFrameworksBuildPhase";
+			"runOnlyForDeploymentPostprocessing" = "0";
+		};
+		"000000000000000000000036" = {
+			"buildActionMask" = "2147483647";
+			"files" = (
+			);
+			"isa" = "PBXResourcesBuildPhase";
+			"runOnlyForDeploymentPostprocessing" = "0";
+		};
+		"000000000000000000000037" = {
+			"buildSettings" = {
+				"BUNDLE_LOADER" = "$(TEST_HOST)";
+				"CODE_SIGN_STYLE" = "Automatic";
+				"GENERATE_INFOPLIST_FILE" = "YES";
+				"LD_RUNPATH_SEARCH_PATHS" = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"PRODUCT_BUNDLE_IDENTIFIER" = "com.example.GPSRecorderTests";
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
+				"TARGETED_DEVICE_FAMILY" = "1,2";
+				"TEST_HOST" = "$(BUILT_PRODUCTS_DIR)/GPSRecorder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GPSRecorder";
+			};
+			"isa" = "XCBuildConfiguration";
+			"name" = "Debug";
+		};
+		"000000000000000000000038" = {
+			"buildSettings" = {
+				"BUNDLE_LOADER" = "$(TEST_HOST)";
+				"CODE_SIGN_STYLE" = "Automatic";
+				"GENERATE_INFOPLIST_FILE" = "YES";
+				"LD_RUNPATH_SEARCH_PATHS" = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"PRODUCT_BUNDLE_IDENTIFIER" = "com.example.GPSRecorderTests";
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
+				"TARGETED_DEVICE_FAMILY" = "1,2";
+				"TEST_HOST" = "$(BUILT_PRODUCTS_DIR)/GPSRecorder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GPSRecorder";
+			};
+			"isa" = "XCBuildConfiguration";
+			"name" = "Release";
+		};
+		"000000000000000000000039" = {
+			"buildConfigurations" = (
+				"000000000000000000000037",
+				"000000000000000000000038",
+			);
+			"defaultConfigurationIsVisible" = "0";
+			"defaultConfigurationName" = "Release";
+			"isa" = "XCConfigurationList";
+		};
+		"00000000000000000000003A" = {
+			"containerPortal" = "000000000000000000000029";
+			"isa" = "PBXContainerItemProxy";
+			"proxyType" = "1";
+			"remoteGlobalIDString" = "000000000000000000000028";
+			"remoteInfo" = "GPSRecorder";
+		};
+		"00000000000000000000003B" = {
+			"isa" = "PBXTargetDependency";
+			"target" = "000000000000000000000028";
+			"targetProxy" = "00000000000000000000003A";
+		};
+		"00000000000000000000003C" = {
+			"buildConfigurationList" = "000000000000000000000039";
+			"buildPhases" = (
+				"000000000000000000000034",
+				"000000000000000000000035",
+				"000000000000000000000036",
+			);
+			"buildRules" = (
+			);
+			"dependencies" = (
+				"00000000000000000000003B",
+			);
+			"isa" = "PBXNativeTarget";
+			"name" = "GPSRecorderTests";
+			"productName" = "GPSRecorderTests";
+			"productReference" = "000000000000000000000032";
+			"productType" = "com.apple.product-type.bundle.unit-test";
+		};
+		"00000000000000000000003D" = {
 			"isa" = "PBXFileReference";
 			"lastKnownFileType" = "net.daringfireball.markdown";
 			"path" = "README.md";

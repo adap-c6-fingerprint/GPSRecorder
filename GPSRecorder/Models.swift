@@ -18,6 +18,12 @@ final class RecordSession {
     @Relationship(deleteRule: .cascade, inverse: \LocationRecord.session)
     var records: [LocationRecord] = []
 
+    @Relationship(deleteRule: .cascade, inverse: \BarometerRecord.session)
+    var barometerRecords: [BarometerRecord] = []
+
+    @Relationship(deleteRule: .cascade, inverse: \ArrivalRecord.session)
+    var arrivals: [ArrivalRecord] = []
+
     init(title: String, startedAt: Date = .now) {
         self.title = title
         self.startedAt = startedAt

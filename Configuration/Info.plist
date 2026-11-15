@@ -46,5 +46,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSMotionUsageDescription</key>
+	<string>층간 이동 측정을 위해 기압과 상대 고도를 기록합니다.</string>
 </dict>
 </plist>
