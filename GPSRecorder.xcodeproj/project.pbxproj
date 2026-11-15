@@ -1,0 +1,379 @@
+// !$*UTF8*$!
+{
+	"archiveVersion" = "1";
+	"classes" = {
+	};
+	"objectVersion" = "56";
+	"objects" = {
+		"000000000000000000000001" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "GPSRecorderApp.swift";
+			"sourceTree" = "<group>";
+		};
+		"000000000000000000000002" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "Persistence.swift";
+			"sourceTree" = "<group>";
+		};
+		"000000000000000000000003" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "Models.swift";
+			"sourceTree" = "<group>";
+		};
+		"000000000000000000000004" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "LocationService.swift";
+			"sourceTree" = "<group>";
+		};
+		"000000000000000000000005" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "SessionListView.swift";
+			"sourceTree" = "<group>";
+		};
+		"000000000000000000000006" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "SessionView.swift";
+			"sourceTree" = "<group>";
+		};
+		"000000000000000000000007" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "CSVExporter.swift";
+			"sourceTree" = "<group>";
+		};
+		"000000000000000000000008" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "folder";
+			"path" = "SeedData";
+			"sourceTree" = "<group>";
+		};
+		"000000000000000000000009" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "folder.assetcatalog";
+			"path" = "Assets.xcassets";
+			"sourceTree" = "<group>";
+		};
+		"00000000000000000000000A" = {
+			"children" = (
+				"000000000000000000000008",
+				"000000000000000000000009",
+			);
+			"isa" = "PBXGroup";
+			"path" = "Resources";
+			"sourceTree" = "<group>";
+		};
+		"00000000000000000000000B" = {
+			"children" = (
+				"000000000000000000000001",
+				"000000000000000000000002",
+				"000000000000000000000003",
+				"000000000000000000000004",
+				"000000000000000000000005",
+				"000000000000000000000006",
+				"000000000000000000000007",
+				"00000000000000000000000A",
+			);
+			"isa" = "PBXGroup";
+			"path" = "GPSRecorder";
+			"sourceTree" = "<group>";
+		};
+		"00000000000000000000000F" = {
+			"children" = (
+				"00000000000000000000002A",
+			);
+			"isa" = "PBXGroup";
+			"path" = "ReceivedData";
+			"sourceTree" = "<group>";
+		};
+		"000000000000000000000010" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "text.plist.xml";
+			"path" = "Info.plist";
+			"sourceTree" = "<group>";
+		};
+		"000000000000000000000011" = {
+			"children" = (
+				"000000000000000000000010",
+			);
+			"isa" = "PBXGroup";
+			"path" = "Configuration";
+			"sourceTree" = "<group>";
+		};
+		"000000000000000000000012" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "net.daringfireball.markdown";
+			"path" = "README.md";
+			"sourceTree" = "<group>";
+		};
+		"000000000000000000000013" = {
+			"explicitFileType" = "wrapper.application";
+			"includeInIndex" = "0";
+			"isa" = "PBXFileReference";
+			"path" = "GPSRecorder.app";
+			"sourceTree" = "BUILT_PRODUCTS_DIR";
+		};
+		"000000000000000000000014" = {
+			"children" = (
+				"000000000000000000000013",
+			);
+			"isa" = "PBXGroup";
+			"name" = "Products";
+			"sourceTree" = "<group>";
+		};
+		"000000000000000000000015" = {
+			"children" = (
+				"00000000000000000000000B",
+				"000000000000000000000011",
+				"00000000000000000000000F",
+				"000000000000000000000012",
+				"000000000000000000000014",
+			);
+			"isa" = "PBXGroup";
+			"sourceTree" = "<group>";
+		};
+		"000000000000000000000016" = {
+			"fileRef" = "000000000000000000000001";
+			"isa" = "PBXBuildFile";
+		};
+		"000000000000000000000017" = {
+			"fileRef" = "000000000000000000000002";
+			"isa" = "PBXBuildFile";
+		};
+		"000000000000000000000018" = {
+			"fileRef" = "000000000000000000000003";
+			"isa" = "PBXBuildFile";
+		};
+		"000000000000000000000019" = {
+			"fileRef" = "000000000000000000000004";
+			"isa" = "PBXBuildFile";
+		};
+		"00000000000000000000001A" = {
+			"fileRef" = "000000000000000000000005";
+			"isa" = "PBXBuildFile";
+		};
+		"00000000000000000000001B" = {
+			"fileRef" = "000000000000000000000006";
+			"isa" = "PBXBuildFile";
+		};
+		"00000000000000000000001C" = {
+			"fileRef" = "000000000000000000000007";
+			"isa" = "PBXBuildFile";
+		};
+		"00000000000000000000001D" = {
+			"buildActionMask" = "2147483647";
+			"files" = (
+				"000000000000000000000016",
+				"000000000000000000000017",
+				"000000000000000000000018",
+				"000000000000000000000019",
+				"00000000000000000000001A",
+				"00000000000000000000001B",
+				"00000000000000000000001C",
+			);
+			"isa" = "PBXSourcesBuildPhase";
+			"runOnlyForDeploymentPostprocessing" = "0";
+		};
+		"00000000000000000000001E" = {
+			"buildActionMask" = "2147483647";
+			"files" = (
+			);
+			"isa" = "PBXFrameworksBuildPhase";
+			"runOnlyForDeploymentPostprocessing" = "0";
+		};
+		"00000000000000000000001F" = {
+			"fileRef" = "000000000000000000000008";
+			"isa" = "PBXBuildFile";
+		};
+		"000000000000000000000020" = {
+			"fileRef" = "000000000000000000000009";
+			"isa" = "PBXBuildFile";
+		};
+		"000000000000000000000021" = {
+			"buildActionMask" = "2147483647";
+			"files" = (
+				"00000000000000000000001F",
+				"000000000000000000000020",
+			);
+			"isa" = "PBXResourcesBuildPhase";
+			"runOnlyForDeploymentPostprocessing" = "0";
+		};
+		"000000000000000000000022" = {
+			"buildSettings" = {
+				"ALWAYS_SEARCH_USER_PATHS" = "NO";
+				"CLANG_ENABLE_MODULES" = "YES";
+				"CLANG_ENABLE_OBJC_ARC" = "YES";
+				"CLANG_WARN_DOCUMENTATION_COMMENTS" = "YES";
+				"DEBUG_INFORMATION_FORMAT" = "dwarf";
+				"ENABLE_TESTABILITY" = "YES";
+				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
+				"GCC_C_LANGUAGE_STANDARD" = "gnu17";
+				"GCC_NO_COMMON_BLOCKS" = "YES";
+				"GCC_OPTIMIZATION_LEVEL" = "0";
+				"GCC_WARN_ABOUT_RETURN_TYPE" = "YES_ERROR";
+				"GCC_WARN_UNUSED_FUNCTION" = "YES";
+				"GCC_WARN_UNUSED_VARIABLE" = "YES";
+				"IPHONEOS_DEPLOYMENT_TARGET" = "17.0";
+				"ONLY_ACTIVE_ARCH" = "YES";
+				"SDKROOT" = "iphoneos";
+				"SWIFT_ACTIVE_COMPILATION_CONDITIONS" = "DEBUG $(inherited)";
+				"SWIFT_DEFAULT_ACTOR_ISOLATION" = "MainActor";
+				"SWIFT_OPTIMIZATION_LEVEL" = "-Onone";
+				"SWIFT_STRICT_CONCURRENCY" = "complete";
+				"SWIFT_VERSION" = "6.0";
+			};
+			"isa" = "XCBuildConfiguration";
+			"name" = "Debug";
+		};
+		"000000000000000000000023" = {
+			"buildSettings" = {
+				"ALWAYS_SEARCH_USER_PATHS" = "NO";
+				"CLANG_ENABLE_MODULES" = "YES";
+				"CLANG_ENABLE_OBJC_ARC" = "YES";
+				"CLANG_WARN_DOCUMENTATION_COMMENTS" = "YES";
+				"DEBUG_INFORMATION_FORMAT" = "dwarf-with-dsym";
+				"ENABLE_NS_ASSERTIONS" = "NO";
+				"ENABLE_USER_SCRIPT_SANDBOXING" = "YES";
+				"GCC_C_LANGUAGE_STANDARD" = "gnu17";
+				"GCC_NO_COMMON_BLOCKS" = "YES";
+				"GCC_WARN_ABOUT_RETURN_TYPE" = "YES_ERROR";
+				"GCC_WARN_UNUSED_FUNCTION" = "YES";
+				"GCC_WARN_UNUSED_VARIABLE" = "YES";
+				"IPHONEOS_DEPLOYMENT_TARGET" = "17.0";
+				"SDKROOT" = "iphoneos";
+				"SWIFT_COMPILATION_MODE" = "wholemodule";
+				"SWIFT_DEFAULT_ACTOR_ISOLATION" = "MainActor";
+				"SWIFT_OPTIMIZATION_LEVEL" = "-O";
+				"SWIFT_STRICT_CONCURRENCY" = "complete";
+				"SWIFT_VERSION" = "6.0";
+				"VALIDATE_PRODUCT" = "YES";
+			};
+			"isa" = "XCBuildConfiguration";
+			"name" = "Release";
+		};
+		"000000000000000000000024" = {
+			"buildConfigurations" = (
+				"000000000000000000000022",
+				"000000000000000000000023",
+			);
+			"defaultConfigurationIsVisible" = "0";
+			"defaultConfigurationName" = "Release";
+			"isa" = "XCConfigurationList";
+		};
+		"000000000000000000000025" = {
+			"buildSettings" = {
+				"ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME" = "AccentColor";
+				"CODE_SIGN_STYLE" = "Automatic";
+				"CURRENT_PROJECT_VERSION" = "1";
+				"ENABLE_PREVIEWS" = "YES";
+				"GENERATE_INFOPLIST_FILE" = "NO";
+				"INFOPLIST_FILE" = "Configuration/Info.plist";
+				"LD_RUNPATH_SEARCH_PATHS" = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"MARKETING_VERSION" = "1.0";
+				"PRODUCT_BUNDLE_IDENTIFIER" = "com.example.GPSRecorder";
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
+				"SUPPORTS_MACCATALYST" = "NO";
+				"SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD" = "NO";
+				"SWIFT_EMIT_LOC_STRINGS" = "YES";
+				"TARGETED_DEVICE_FAMILY" = "1,2";
+			};
+			"isa" = "XCBuildConfiguration";
+			"name" = "Debug";
+		};
+		"000000000000000000000026" = {
+			"buildSettings" = {
+				"ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME" = "AccentColor";
+				"CODE_SIGN_STYLE" = "Automatic";
+				"CURRENT_PROJECT_VERSION" = "1";
+				"ENABLE_PREVIEWS" = "YES";
+				"GENERATE_INFOPLIST_FILE" = "NO";
+				"INFOPLIST_FILE" = "Configuration/Info.plist";
+				"LD_RUNPATH_SEARCH_PATHS" = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				"MARKETING_VERSION" = "1.0";
+				"PRODUCT_BUNDLE_IDENTIFIER" = "com.example.GPSRecorder";
+				"PRODUCT_NAME" = "$(TARGET_NAME)";
+				"SUPPORTED_PLATFORMS" = "iphoneos iphonesimulator";
+				"SUPPORTS_MACCATALYST" = "NO";
+				"SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD" = "NO";
+				"SWIFT_EMIT_LOC_STRINGS" = "YES";
+				"TARGETED_DEVICE_FAMILY" = "1,2";
+			};
+			"isa" = "XCBuildConfiguration";
+			"name" = "Release";
+		};
+		"000000000000000000000027" = {
+			"buildConfigurations" = (
+				"000000000000000000000025",
+				"000000000000000000000026",
+			);
+			"defaultConfigurationIsVisible" = "0";
+			"defaultConfigurationName" = "Release";
+			"isa" = "XCConfigurationList";
+		};
+		"000000000000000000000028" = {
+			"buildConfigurationList" = "000000000000000000000027";
+			"buildPhases" = (
+				"00000000000000000000001D",
+				"00000000000000000000001E",
+				"000000000000000000000021",
+			);
+			"buildRules" = (
+			);
+			"dependencies" = (
+			);
+			"isa" = "PBXNativeTarget";
+			"name" = "GPSRecorder";
+			"productName" = "GPSRecorder";
+			"productReference" = "000000000000000000000013";
+			"productType" = "com.apple.product-type.application";
+		};
+		"000000000000000000000029" = {
+			"attributes" = {
+				"BuildIndependentTargetsInParallel" = "YES";
+				"LastSwiftUpdateCheck" = "2700";
+				"LastUpgradeCheck" = "2700";
+				"TargetAttributes" = {
+					"000000000000000000000028" = {
+						"CreatedOnToolsVersion" = "27.2";
+					};
+				};
+			};
+			"buildConfigurationList" = "000000000000000000000024";
+			"compatibilityVersion" = "Xcode 14.0";
+			"developmentRegion" = "ko";
+			"hasScannedForEncodings" = "0";
+			"isa" = "PBXProject";
+			"knownRegions" = (
+				"ko",
+				"en",
+				"Base",
+			);
+			"mainGroup" = "000000000000000000000015";
+			"productRefGroup" = "000000000000000000000014";
+			"projectDirPath" = "";
+			"projectRoot" = "";
+			"targets" = (
+				"000000000000000000000028",
+			);
+		};
+		"00000000000000000000002A" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "net.daringfireball.markdown";
+			"path" = "README.md";
+			"sourceTree" = "<group>";
+		};
+	};
+	"rootObject" = "000000000000000000000029";
+}

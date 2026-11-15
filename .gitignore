@@ -1,0 +1,11 @@
+.DS_Store
+DerivedData/
+build/
+xcuserdata/
+*.xcuserstate
+
+# Local sensor recordings are never published
+*.store
+*.store-shm
+*.store-wal
+*.csv
